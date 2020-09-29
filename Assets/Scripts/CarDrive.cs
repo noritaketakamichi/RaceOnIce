@@ -29,11 +29,11 @@ public class CarDrive : MonoBehaviour
 
     //前後の移動
     void Move(){
-        if(Input.GetKey(KeyCode.W)){
+        if(Input.GetKey("up")){
             Debug.Log("WWWWWWWWWWWWWWW");
             rb.AddRelativeForce(new Vector3(Vector3.forward.x,0,Vector3.forward.z)*speed*10);
         }
-        else if(Input.GetKey(KeyCode.S)){
+        else if(Input.GetKey("down")){
             rb.AddRelativeForce(new Vector3(Vector3.forward.x,0,Vector3.forward.z)*-speed*10);
         }
         Vector3 localVelocity= transform.InverseTransformDirection(rb.velocity);
@@ -43,10 +43,10 @@ public class CarDrive : MonoBehaviour
 
     //y軸中心の回転
     void Turn(){
-        if(Input.GetKey(KeyCode.D)){
+        if(Input.GetKey("right")){
             rb.AddTorque(Vector3.up*turnSpeed);
         }
-        else if(Input.GetKey(KeyCode.A)){
+        else if(Input.GetKey("left")){
             rb.AddTorque(-Vector3.up*turnSpeed);
         }
     }
