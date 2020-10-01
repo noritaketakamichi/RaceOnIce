@@ -33,7 +33,6 @@ public class CarDrive : MonoBehaviour
     {
         if (Input.GetKey("up"))
         {
-            Debug.Log("WWWWWWWWWWWWWWW");
             rb.AddRelativeForce(new Vector3(Vector3.forward.x, 0, Vector3.forward.z) * speed * 10);
         }
         else if (Input.GetKey("down"))
@@ -66,7 +65,6 @@ public class CarDrive : MonoBehaviour
 
     void CheckFall()
     {
-        Debug.Log(transform.position.y);
         //穴に落ちたら最初に戻す
         if (transform.position.y < 20)
         {
